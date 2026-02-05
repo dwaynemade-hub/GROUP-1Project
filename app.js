@@ -27,7 +27,7 @@ app.post('/todos', (req, res) => {
         return res.status(400).json({ error: 'Task must be a string' });
     }
     
-    // Check for duplicates BEFORE adding
+    // Check for duplicates BEFORE adding up
     if (todos.some(t => t.task === req.body.task)) {
         return res.status(400).json({error: 'Task already exists'});
     }
